@@ -19,6 +19,14 @@ An automated system that continuously discovers, categorizes, and tracks global 
 
 ---
 
+## 🌐 Live Demo
+
+- **Frontend:** https://opportunity-tracker-bay.vercel.app
+- **Backend API:** https://opportunity-tracker-cmqw.onrender.com
+- **API Documentation:** https://opportunity-tracker-cmqw.onrender.com/docs
+
+---
+
 ## 🏗️ Architecture
 Scraper (RSS + Web) → AI Extractor (Groq/Llama3) → SQLite DB → FastAPI → Next.js Dashboard
 
