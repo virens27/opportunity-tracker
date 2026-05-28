@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://opportunity-tracker-cmqw.onrender.com";
 
 interface Opportunity {
   id: number;
