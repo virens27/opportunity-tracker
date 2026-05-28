@@ -113,3 +113,18 @@ def update_tracker(track_id: int, data: TrackerIn, db: Session = Depends(get_db)
         setattr(item, key, value)
     db.commit()
     return item
+
+@app.post("/admin/seed")
+def seed_database(db: Session = Depends(get_db)):
+    from scraper import run_scraper
+    try:
+        run_scraper()
+        count = db.query(Opportunity).count()
+        return {"message": f"Seeding complete! {count} opportunities in database."}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/admin/count")
+def count_opportunities(db: Session = Depends(get_db)):
+    count = db.query(Opportunity).count()
+    return {"total_opportunities": count}
